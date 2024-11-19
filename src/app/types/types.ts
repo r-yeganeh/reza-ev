@@ -1,6 +1,4 @@
-import { Types } from "mongoose";
-
-export interface Address {
+interface Address {
   street: string;
   city: string;
   state: string;
@@ -8,8 +6,8 @@ export interface Address {
   postalCode: string;
 }
 
-export interface User {
-  _id: Types.ObjectId;
+interface User {
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -50,12 +48,11 @@ export interface User {
   metadata: Record<string, unknown>;
 }
 
-export interface Manufacturer {
-  _id: Types.ObjectId;
+interface Manufacturer {
+  id: string;
   name: string;
   industry: string;
-  userIds: Types.ObjectId[];
-  //location: Address;
+  userIds: string[];
   contactPerson: {
     name: string;
     email: string;

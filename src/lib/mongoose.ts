@@ -1,10 +1,14 @@
 import mongoose from "mongoose";
 
-if (!process.env.MONGODB_URI) {
+const MONGODB_URI = "mongodb://localhost:27017/evolute";
+
+//if (!process.env.MONGODB_URI) {
+
+if (!MONGODB_URI) {
   throw new Error("Please add your Mongodb URI to .env.local");
 }
 
-const MONGODB_URI = process.env.MONGODB_URI;
+//const MONGODB_URI = process.env.MONGODB_URI;
 
 let cached = global.mongoose;
 
